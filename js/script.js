@@ -10,7 +10,28 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-
+const quotes = [
+  {
+    quote:"I'm gonna make him an offer he can't refuse.",
+    author:"THE GODFATHER-1972"
+  },
+  {
+    quote:"May the Force be with you.",
+    author:"STAR WARS-1977"
+  },
+  {
+    quote:"Today, I consider myself the luckiest man on the face of the earth.",
+    author:"THE PRIDE OF THE YANKEES-1943"
+  },
+  {
+    quote:"If you build it, they will come.",
+    author:"FIELD OF DREAMS-1989"
+  },
+  {
+    quote:"Nobody puts Baby in a corner.",
+    author:"DIRTY DANCING-1987"
+  },
+];
 
 
 /***
