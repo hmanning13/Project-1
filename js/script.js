@@ -7,9 +7,8 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
+
+//Array of movie quotes and the years they were produced
 const quotes = [
   {
     quote:"I'm gonna make him an offer he can't refuse.",
@@ -40,9 +39,8 @@ const quotes = [
 ];
 
 
-/***
- * `getRandomQuote` function
-***/
+
+//getRandomQuote function used to randomly pull a movie quote from above
 function getRandomQuote() {
 
   const randomNumber = Math.floor(Math.random() * quotes.length)
@@ -50,9 +48,9 @@ function getRandomQuote() {
 
 };
 
-/***
- * `printQuote` function
-***/
+
+//function that prints a random quote based on the function above
+//quote gets randomly pulled, then goes through the print function to properly display the movie quote
 function printQuote() {
   const quote = getRandomQuote();
   let html = `<p class="quote"> ${quote.quote} </p>
