@@ -13,23 +13,29 @@ project 1 - A Random Quote Generator
 const quotes = [
   {
     quote:"I'm gonna make him an offer he can't refuse.",
-    author:"THE GODFATHER-1972"
+    source:"THE GODFATHER",
+    year: 1972
   },
   {
     quote:"May the Force be with you.",
-    author:"STAR WARS-1977"
+    source:"STAR WARS",
+    year: 1977,
+    citation: "George Lucas"
   },
   {
     quote:"Today, I consider myself the luckiest man on the face of the earth.",
-    author:"THE PRIDE OF THE YANKEES-1943"
+    source:"THE PRIDE OF THE YANKEES",
+    year: 1943
   },
   {
     quote:"If you build it, they will come.",
-    author:"FIELD OF DREAMS-1989"
+    source:"FIELD OF DREAMS",
+    year: 1989
   },
   {
     quote:"Nobody puts Baby in a corner.",
-    author:"DIRTY DANCING-1987"
+    source:"DIRTY DANCING",
+    year: 1987
   },
 ];
 
@@ -42,15 +48,26 @@ function getRandomQuote() {
   const randomNumber = Math.floor(Math.random() * quotes.length)
   return quotes[randomNumber];
 
-}
+};
 
-console.log(getRandomQuote())
 /***
  * `printQuote` function
 ***/
+function printQuote() {
+  const quote = getRandomQuote();
+  let html = `<p class="quote"> ${quote.quote} </p>
+  <p class="source"> ${quote.source}`;
+  if (quote.year) {
+    html += `<span class = "year"> ${quote.year} </span>`;
+  };
+  if (quote.citation) {
+    html += `<span class = "citation"> ${quote.citation} </span>`;
+  };
 
-
-
+  html += `</p>`;
+  return document.getElementById('quote-box').innerHTML = html;
+};
+console.log(printQuote())
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
