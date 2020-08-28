@@ -13,28 +13,33 @@ const quotes = [
   {
     quote:"I'm gonna make him an offer he can't refuse.",
     source:"THE GODFATHER",
-    year: 1972
+    year: 1972,
+    tags: "#crime, #drama"
   },
   {
     quote:"May the Force be with you.",
     source:"STAR WARS",
+    citation: "George Lucas",
     year: 1977,
-    citation: "George Lucas"
+    tags: "#action, #adventure, #fantasy"
   },
   {
     quote:"Today, I consider myself the luckiest man on the face of the earth.",
     source:"THE PRIDE OF THE YANKEES",
-    year: 1943
+    year: 1943,
+    tags: "#biography, #drama, #romance"
   },
   {
     quote:"If you build it, they will come.",
     source:"FIELD OF DREAMS",
-    year: 1989
+    year: 1989,
+    tags: "#drama, #family, #fantasy"
   },
   {
     quote:"Nobody puts Baby in a corner.",
     source:"DIRTY DANCING",
-    year: 1987
+    year: 1987,
+    tags: "#drama, #music, #romance"
   },
 ];
 
@@ -60,6 +65,9 @@ function printQuote() {
   };
   if (quote.citation) {
     html += `<span class = "citation"> ${quote.citation} </span>`;
+  };
+  if (quote.tags) {
+    html += `<span class = "tags"> ${quote.tags} </span>`;
   };
 
   html += `</p>`;
