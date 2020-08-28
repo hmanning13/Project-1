@@ -9,6 +9,8 @@ project 1 - A Random Quote Generator
 
 
 //Array of movie quotes and the years they were produced
+
+
 const quotes = [
   {
     quote:"I'm gonna make him an offer he can't refuse.",
@@ -44,8 +46,9 @@ const quotes = [
 ];
 
 
-
 //getRandomQuote function used to randomly pull a movie quote from above
+
+
 function getRandomQuote() {
 
   const randomNumber = Math.floor(Math.random() * quotes.length)
@@ -56,6 +59,10 @@ function getRandomQuote() {
 
 //function that prints a random quote based on the function above
 //quote gets randomly pulled, then goes through the print function to properly display the movie quote
+//second function calls random rgb background color
+//gets pulled every time the printQuote function is called
+
+
 function printQuote() {
   const quote = getRandomQuote();
   let html = `<p class="quote"> ${quote.quote} </p>
@@ -71,24 +78,21 @@ function printQuote() {
   };
 
   html += `</p>`;
+    function randomRGB() {
+
+      let colorOne, colorTwo, colorThree;
+      colorOne = Math.floor(Math.random()*256);
+      colorTwo = Math.floor(Math.random()*256);
+      colorThree = Math.floor(Math.random()*256);
+      return `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
+  }
+  document.querySelector("body").style.backgroundColor = randomRGB();
   return document.getElementById('quote-box').innerHTML = html;
 };
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
 
-function randomRGB() {
+//setInterval is called to automatically refresh the page every 10 seconds
 
-  let colorOne, colorTwo, colorThree;
-  colorOne = Math.floor(Math.random()*256);
-  colorTwo = Math.floor(Math.random()*256);
-  colorThree = Math.floor(Math.random()*256);
-  return `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
-}
-document.querySelector("body").style.backgroundColor = randomRGB();
 
 setInterval(printQuote, 10000);
-setInterval(randomRGB, 10000 );
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
