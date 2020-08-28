@@ -79,4 +79,16 @@ function printQuote() {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
+function randomRGB() {
+
+  let colorOne, colorTwo, colorThree;
+  colorOne = Math.floor(Math.random()*256);
+  colorTwo = Math.floor(Math.random()*256);
+  colorThree = Math.floor(Math.random()*256);
+  return `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
+}
+document.querySelector("body").style.backgroundColor = randomRGB();
+
+setInterval(printQuote, 10000);
+setInterval(randomRGB, 10000 );
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
