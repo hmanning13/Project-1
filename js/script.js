@@ -67,7 +67,7 @@ function printQuote() {
   html += `</p>`;
   return document.getElementById('quote-box').innerHTML = html;
 };
-console.log(printQuote())
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
